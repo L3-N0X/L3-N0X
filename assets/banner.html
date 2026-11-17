@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=900, initial-scale=1.0" />
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body {
+    width: 900px;
+    height: 240px;
+    overflow: hidden;
+    background: transparent;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  .card {
+    position: relative;
+    width: 900px;
+    height: 240px;
+    background: #0b0f16;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid rgba(139, 168, 204, 0.16);
+  }
+
+  /*
+    Ordered Bayer dithering via pure CSS:
+    - Smooth CSS-animated wave layers in .field
+    - 8x8 Bayer threshold matrix blended with hard-light
+    - Grayscale + high contrast quantizes into crisp 1-bit dithered dots
+  */
+  .dither-stage {
+    position: absolute;
+    inset: 0;
+    background: #000;
+    filter: grayscale(1) contrast(130);
+    isolation: isolate;
+  }
+
+  .field {
+    position: absolute;
+    inset: 0;
+    background: #0d0d0d;
+    overflow: hidden;
+  }
+
+  .wave {
+    position: absolute;
+    top: -60px;
+    left: 0;
+    width: 1800px;
+    height: 360px;
+    will-change: transform;
+  }
+
+  /* Primary slow rolling wave swells (period = 900px, seamless loop) */
+  .wave-1 {
+    background:
+      radial-gradient(380px 140px at 225px 210px, rgba(255,255,255,0.92) 0%, rgba(165,165,165,0.45) 45%, transparent 78%),
+      radial-gradient(420px 150px at 675px 140px, rgba(235,235,235,0.82) 0%, rgba(130,130,130,0.38) 50%, transparent 80%),
+      radial-gradient(380px 140px at 1125px 210px, rgba(255,255,255,0.92) 0%, rgba(165,165,165,0.45) 45%, transparent 78%),
+      radial-gradient(420px 150px at 1575px 140px, rgba(235,235,235,0.82) 0%, rgba(130,130,130,0.38) 50%, transparent 80%);
+    animation: wave-flow-1 8s linear infinite;
+  }
+
+  /* Secondary counter-harmonic swell */
+  .wave-2 {
+    background:
+      radial-gradient(320px 115px at 150px 125px, rgba(210,210,210,0.65) 0%, transparent 76%),
+      radial-gradient(340px 125px at 600px 235px, rgba(245,245,245,0.82) 0%, transparent 76%),
+      radial-gradient(320px 115px at 1050px 125px, rgba(210,210,210,0.65) 0%, transparent 76%),
+      radial-gradient(340px 125px at 1500px 235px, rgba(245,245,245,0.82) 0%, transparent 76%);
+    mix-blend-mode: screen;
+    animation: wave-flow-2 8s linear infinite;
+  }
+
+  /* Diagonal interference bands */
+  .wave-3 {
+    background: repeating-linear-gradient(
+      108deg,
+      rgba(255,255,255,0.0) 0px,
+      rgba(255,255,255,0.30) 112px,
+      rgba(255,255,255,0.0) 225px,
+      rgba(255,255,255,0.24) 338px,
+      rgba(255,255,255,0.0) 450px
+    );
+    mix-blend-mode: screen;
+    animation: wave-flow-3 8s linear infinite;
+  }
+
+  /* Subtle crest highlight band */
+  .horizon-glow {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(255,255,255,0.00) 0%,
+      rgba(255,255,255,0.07) 52%,
+      rgba(255,255,255,0.28) 100%
+    );
+    mix-blend-mode: screen;
+  }
+
+  @keyframes wave-flow-1 {
+    0%   { transform: translate3d(0px, 0px, 0); }
+    25%  { transform: translate3d(-225px, -10px, 0); }
+    50%  { transform: translate3d(-450px, 0px, 0); }
+    75%  { transform: translate3d(-675px, 10px, 0); }
+    100% { transform: translate3d(-900px, 0px, 0); }
+  }
+
+  @keyframes wave-flow-2 {
+    0%   { transform: translate3d(-900px, 6px, 0); }
+    50%  { transform: translate3d(-450px, -10px, 0); }
+    100% { transform: translate3d(0px, 6px, 0); }
+  }
+
+  @keyframes wave-flow-3 {
+    0%   { transform: translate3d(0px, 0px, 0); }
+    50%  { transform: translate3d(-450px, -8px, 0); }
+    100% { transform: translate3d(-900px, 0px, 0); }
+  }
+
+  /* 8x8 Bayer matrix tile at 2x pixel scale (16x16px) */
+  .bayer {
+    position: absolute;
+    inset: 0;
+    background-repeat: repeat;
+    background-size: 16px 16px;
+    image-rendering: pixelated;
+    mix-blend-mode: hard-light;
+    opacity: 0.94;
+  }
+
+  /* Cool steel-cyan palette over deep obsidian */
+  .tint-layer {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(125deg, #3c70a4 0%, #68a8de 55%, #9bd0ff 100%);
+    mix-blend-mode: multiply;
+    pointer-events: none;
+  }
+
+  .base-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 76% 58%, rgba(22, 38, 60, 0.36), rgba(11, 15, 22, 0.88) 72%);
+    mix-blend-mode: screen;
+    pointer-events: none;
+  }
+
+  /* Left-side readability gradient scrim */
+  .scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(11, 15, 22, 0.96) 0%,
+      rgba(11, 15, 22, 0.86) 36%,
+      rgba(11, 15, 22, 0.42) 58%,
+      rgba(11, 15, 22, 0.04) 85%,
+      rgba(11, 15, 22, 0.00) 100%
+    );
+  }
+
+  .content {
+    position: relative;
+    z-index: 10;
+    height: 100%;
+    padding: 34px 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .top-row {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: #8b949e;
+  }
+
+  .title-block h1 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: #f0f6fc;
+    line-height: 1.06;
+  }
+
+  .title-block .handle {
+    color: #79b8ff;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-weight: 500;
+    font-size: 15px;
+    margin-top: 6px;
+    letter-spacing: 0.03em;
+  }
+
+  .bottom-row {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    font-size: 12px;
+    color: #9eb0c4;
+    letter-spacing: 0.03em;
+  }
+
+  .sep {
+    color: #414d5e;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="dither-stage">
+      <div class="field">
+        <div class="wave wave-1"></div>
+        <div class="wave wave-2"></div>
+        <div class="wave wave-3"></div>
+        <div class="horizon-glow"></div>
+      </div>
+      <div class="bayer" id="bayer"></div>
+    </div>
+    <div class="tint-layer"></div>
+    <div class="base-bg"></div>
+    <div class="scrim"></div>
+
+    <div class="content">
+      <div class="top-row">
+        <span>Munich, DE</span>
+      </div>
+      <div class="title-block">
+        <h1>Leon Gött</h1>
+        <div class="handle">@L3-N0X</div>
+      </div>
+      <div class="bottom-row">
+        <span>AI &amp; ML</span>
+        <span class="sep">/</span>
+        <span>Robotics</span>
+        <span class="sep">/</span>
+        <span>Systems</span>
+        <span class="sep">/</span>
+        <span>3D</span>
+        <span class="sep">/</span>
+        <span>Web</span>
+        <span class="sep">/</span>
+        <span>DJ</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const bayer8 = [
+      [ 0, 32,  8, 40,  2, 34, 10, 42],
+      [48, 16, 56, 24, 50, 18, 58, 26],
+      [12, 44,  4, 36, 14, 46,  6, 38],
+      [60, 28, 52, 20, 62, 30, 54, 22],
+      [ 3, 35, 11, 43,  1, 33,  9, 41],
+      [51, 19, 59, 27, 49, 17, 57, 25],
+      [15, 47,  7, 39, 13, 45,  5, 37],
+      [63, 31, 55, 23, 61, 29, 53, 21]
+    ];
+    const c = document.createElement('canvas');
+    c.width = 8;
+    c.height = 8;
+    const ctx = c.getContext('2d');
+    const img = ctx.createImageData(8, 8);
+    for (let y = 0; y < 8; y++) {
+      for (let x = 0; x < 8; x++) {
+        const i = (y * 8 + x) * 4;
+        const v = Math.round(((bayer8[y][x] + 0.5) / 64) * 255);
+        img.data[i] = v;
+        img.data[i + 1] = v;
+        img.data[i + 2] = v;
+        img.data[i + 3] = 255;
+      }
+    }
+    ctx.putImageData(img, 0, 0);
+    document.getElementById('bayer').style.backgroundImage = `url(${c.toDataURL()})`;
+  </script>
+</body>
+</html>
