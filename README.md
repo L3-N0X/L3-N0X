@@ -6,6 +6,10 @@ I'm **Leon Gött**, an Artificial Intelligence (B.Sc.) student and **Dualer Stud
 
 I build things across **AI & machine learning**, **robotics**, **3D modelling**, **systems tooling**, and **web development**. Outside of work and uni, I'm into **DJing**, **mountain biking**, **Minecraft**, and **Twitch**. Daily driving **CachyOS** with **Niri** and **duxshell** — my configs live in [dotfiles](https://github.com/L3-N0X/dotfiles).
 
+<p align="center">
+  <img src="./assets/stack.svg" alt="Languages, frameworks, and platform" width="100%" />
+</p>
+
 ---
 
 ### Currently Building
@@ -35,6 +39,14 @@ I build things across **AI & machine learning**, **robotics**, **3D modelling**,
 - **no-fog-perfected** ([GitHub](https://github.com/L3-N0X/no-fog-perfected) · [Modrinth](https://modrinth.com/mod/no-fog-perfected)) — Fabric/NeoForge mod for cleanly removing or fine-tuning dimension, fluid, and status-effect fog.
 - **halfbright** ([GitHub](https://github.com/L3-N0X/halfbright) · [Modrinth](https://modrinth.com/mod/halfbright)) — CPU lightmap-scaling alternative to fullbright that preserves smooth lighting and works with Sodium.
 - **betterchunkborders** ([GitHub](https://github.com/L3-N0X/betterchunkborders) · [Modrinth](https://modrinth.com/mod/better-chunk-borders)) — Fabric mod replacing the `F3+G` chunk border renderer with custom grids, gradients, and heightmap adaptation.
+
+---
+
+### Languages
+
+<p align="center">
+  <img src="./assets/languages.svg" alt="Language breakdown across public and private repositories" width="100%" />
+</p>
 
 ---
 
