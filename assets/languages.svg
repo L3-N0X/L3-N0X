@@ -1,53 +1,59 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="176" viewBox="0 0 900 176" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="84" viewBox="0 0 900 84" fill="none">
   <style>
     text { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+    .fg { fill: #e6edf3; }
+    .muted { fill: #8b949e; }
+    .subtle { fill: #6e7681; }
+    @media (prefers-color-scheme: light) {
+      .fg { fill: #1f2328; }
+      .muted { fill: #57606a; }
+      .subtle { fill: #6e7781; }
+    }
   </style>
-  <rect x="0.5" y="0.5" width="899" height="175" rx="10" fill="#0b0f16" stroke="#1e2633" />
-  <text x="44" y="38" fill="#8b949e" font-size="12" letter-spacing="1.8">LANGUAGES</text>
-  <text x="856" y="38" text-anchor="end" fill="#6e7681" font-size="11.5">49 repositories (public &amp; private)</text>
   <g>
-    <rect x="44" y="66" width="392" height="10" rx="2" fill="#a5d8ff" />
-    <rect x="439" y="66" width="196" height="10" rx="2" fill="#79b8ff" />
-    <rect x="638" y="66" width="75" height="10" rx="2" fill="#4b82b8" />
-    <rect x="716" y="66" width="36" height="10" rx="2" fill="#34608c" />
-    <rect x="755" y="66" width="26" height="10" rx="2" fill="#7c8ea3" />
-    <rect x="784" y="66" width="25" height="10" rx="2" fill="#526375" />
-    <rect x="812" y="66" width="44" height="10" rx="2" fill="#323d4a" />
+    <rect x="0" y="0" width="435" height="10" rx="2" fill="#a5d8ff" />
+    <rect x="438" y="0" width="218" height="10" rx="2" fill="#79b8ff" />
+    <rect x="659" y="0" width="83" height="10" rx="2" fill="#4b82b8" />
+    <rect x="745" y="0" width="40" height="10" rx="2" fill="#34608c" />
+    <rect x="788" y="0" width="29" height="10" rx="2" fill="#7c8ea3" />
+    <rect x="820" y="0" width="28" height="10" rx="2" fill="#526375" />
+    <rect x="851" y="0" width="49" height="10" rx="2" fill="#323d4a" />
   </g>
   
-    <g transform="translate(44.0, 104)">
+    <g transform="translate(0.0, 26)">
       <rect x="0" y="3" width="8" height="8" rx="2" fill="#a5d8ff" />
-      <text x="16" y="11" fill="#e6edf3" font-size="12.5" font-weight="500">TypeScript</text>
-      <text x="182.0" y="11" text-anchor="end" fill="#8b949e" font-size="12">49.3%</text>
+      <text x="16" y="11" class="fg" font-size="12.5" font-weight="500">TypeScript</text>
+      <text x="201.0" y="11" text-anchor="end" class="muted" font-size="12">49.3%</text>
     </g>
-    <g transform="translate(254.0, 104)">
+    <g transform="translate(233.0, 26)">
       <rect x="0" y="3" width="8" height="8" rx="2" fill="#79b8ff" />
-      <text x="16" y="11" fill="#e6edf3" font-size="12.5" font-weight="500">Rust</text>
-      <text x="182.0" y="11" text-anchor="end" fill="#8b949e" font-size="12">24.7%</text>
+      <text x="16" y="11" class="fg" font-size="12.5" font-weight="500">Rust</text>
+      <text x="201.0" y="11" text-anchor="end" class="muted" font-size="12">24.7%</text>
     </g>
-    <g transform="translate(464.0, 104)">
+    <g transform="translate(466.0, 26)">
       <rect x="0" y="3" width="8" height="8" rx="2" fill="#4b82b8" />
-      <text x="16" y="11" fill="#e6edf3" font-size="12.5" font-weight="500">Kotlin</text>
-      <text x="182.0" y="11" text-anchor="end" fill="#8b949e" font-size="12">9.5%</text>
+      <text x="16" y="11" class="fg" font-size="12.5" font-weight="500">Kotlin</text>
+      <text x="201.0" y="11" text-anchor="end" class="muted" font-size="12">9.5%</text>
     </g>
-    <g transform="translate(674.0, 104)">
+    <g transform="translate(699.0, 26)">
       <rect x="0" y="3" width="8" height="8" rx="2" fill="#34608c" />
-      <text x="16" y="11" fill="#e6edf3" font-size="12.5" font-weight="500">Jupyter</text>
-      <text x="182.0" y="11" text-anchor="end" fill="#8b949e" font-size="12">4.5%</text>
+      <text x="16" y="11" class="fg" font-size="12.5" font-weight="500">Jupyter</text>
+      <text x="201.0" y="11" text-anchor="end" class="muted" font-size="12">4.5%</text>
     </g>
-    <g transform="translate(44.0, 130)">
+    <g transform="translate(0.0, 52)">
       <rect x="0" y="3" width="8" height="8" rx="2" fill="#7c8ea3" />
-      <text x="16" y="11" fill="#e6edf3" font-size="12.5" font-weight="500">Python</text>
-      <text x="182.0" y="11" text-anchor="end" fill="#8b949e" font-size="12">3.3%</text>
+      <text x="16" y="11" class="fg" font-size="12.5" font-weight="500">Python</text>
+      <text x="201.0" y="11" text-anchor="end" class="muted" font-size="12">3.3%</text>
     </g>
-    <g transform="translate(254.0, 130)">
+    <g transform="translate(233.0, 52)">
       <rect x="0" y="3" width="8" height="8" rx="2" fill="#526375" />
-      <text x="16" y="11" fill="#e6edf3" font-size="12.5" font-weight="500">PLpgSQL</text>
-      <text x="182.0" y="11" text-anchor="end" fill="#8b949e" font-size="12">3.2%</text>
+      <text x="16" y="11" class="fg" font-size="12.5" font-weight="500">PLpgSQL</text>
+      <text x="201.0" y="11" text-anchor="end" class="muted" font-size="12">3.2%</text>
     </g>
-    <g transform="translate(464.0, 130)">
+    <g transform="translate(466.0, 52)">
       <rect x="0" y="3" width="8" height="8" rx="2" fill="#323d4a" />
-      <text x="16" y="11" fill="#e6edf3" font-size="12.5" font-weight="500">Other</text>
-      <text x="182.0" y="11" text-anchor="end" fill="#8b949e" font-size="12">5.5%</text>
+      <text x="16" y="11" class="fg" font-size="12.5" font-weight="500">Other</text>
+      <text x="201.0" y="11" text-anchor="end" class="muted" font-size="12">5.5%</text>
     </g>
+  <text x="900" y="80" text-anchor="end" class="subtle" font-size="11">49 repositories (public &amp; private)</text>
 </svg>

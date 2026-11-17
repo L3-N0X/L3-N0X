@@ -150,11 +150,10 @@ function renderLanguagesSvg(repos) {
   ];
 
   const width = 900;
-  const height = 176;
-  const padX = 44;
-  const barX = padX;
-  const barY = 66;
-  const barW = width - padX * 2;
+  const height = 84;
+  const barX = 0;
+  const barY = 0;
+  const barW = width;
   const barH = 10;
   const gap = 3;
 
@@ -173,15 +172,15 @@ function renderLanguagesSvg(repos) {
   }).join('\n    ');
 
   const cols = 4;
-  const colGap = 28;
+  const colGap = 32;
   const colW = (barW - colGap * (cols - 1)) / cols;
-  const legendStartY = 104;
+  const legendStartY = 26;
   const rowH = 26;
 
   const legendItems = items.map((item, idx) => {
     const col = idx % cols;
     const row = Math.floor(idx / cols);
-    const x = padX + col * (colW + colGap);
+    const x = col * (colW + colGap);
     const y = legendStartY + row * rowH;
     const color = palette[idx % palette.length];
     const pctStr = `${item.pct.toFixed(1)}%`;
@@ -190,8 +189,8 @@ function renderLanguagesSvg(repos) {
     return `
     <g transform="translate(${x.toFixed(1)}, ${y})">
       <rect x="0" y="3" width="8" height="8" rx="2" fill="${color}" />
-      <text x="16" y="11" fill="#e6edf3" font-size="12.5" font-weight="500">${escapeXml(label)}</text>
-      <text x="${colW.toFixed(1)}" y="11" text-anchor="end" fill="#8b949e" font-size="12">${pctStr}</text>
+      <text x="16" y="11" class="fg" font-size="12.5" font-weight="500">${escapeXml(label)}</text>
+      <text x="${colW.toFixed(1)}" y="11" text-anchor="end" class="muted" font-size="12">${pctStr}</text>
     </g>`;
   }).join('');
 
@@ -202,14 +201,20 @@ function renderLanguagesSvg(repos) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none">
   <style>
     text { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+    .fg { fill: #e6edf3; }
+    .muted { fill: #8b949e; }
+    .subtle { fill: #6e7681; }
+    @media (prefers-color-scheme: light) {
+      .fg { fill: #1f2328; }
+      .muted { fill: #57606a; }
+      .subtle { fill: #6e7781; }
+    }
   </style>
-  <rect x="0.5" y="0.5" width="${width - 1}" height="${height - 1}" rx="10" fill="#0b0f16" stroke="#1e2633" />
-  <text x="${padX}" y="38" fill="#8b949e" font-size="12" letter-spacing="1.8">LANGUAGES</text>
-  <text x="${width - padX}" y="38" text-anchor="end" fill="#6e7681" font-size="11.5">${escapeXml(subtitle)}</text>
   <g>
     ${segments}
   </g>
   ${legendItems}
+  <text x="${width}" y="${height - 4}" text-anchor="end" class="subtle" font-size="11">${escapeXml(subtitle)}</text>
 </svg>
 `;
 }

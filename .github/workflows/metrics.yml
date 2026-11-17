@@ -28,7 +28,9 @@ jobs:
 
       - name: Generate languages SVG
         env:
-          # Add a GH_STATS_TOKEN repo secret (repo + read:org scope) to include private repos (EatMe, Trackbridge, etc.).
+          # Add a GH_STATS_TOKEN repo secret to include private repos:
+          # - Classic PAT with `repo` scope: includes private L3-N0X repos + org repos like EatMe-App/EatMe.
+          # - Fine-grained PAT (Resource owner: L3-N0X, All repositories, Metadata: Read-only): includes private L3-N0X repos (skips private org repos).
           # Falls back to GITHUB_TOKEN (public repos only) if unset.
           GH_STATS_TOKEN: ${{ secrets.GH_STATS_TOKEN }}
           GITHUB_TOKEN: ${{ github.token }}
