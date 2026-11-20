@@ -11,24 +11,24 @@
     }
   </style>
   <g>
-    <rect x="0" y="0" width="428" height="10" rx="2" fill="#a5d8ff" />
-    <rect x="431" y="0" width="226" height="10" rx="2" fill="#79b8ff" />
-    <rect x="660" y="0" width="82" height="10" rx="2" fill="#4b82b8" />
-    <rect x="745" y="0" width="39" height="10" rx="2" fill="#34608c" />
-    <rect x="787" y="0" width="29" height="10" rx="2" fill="#7c8ea3" />
-    <rect x="819" y="0" width="27" height="10" rx="2" fill="#526375" />
-    <rect x="849" y="0" width="51" height="10" rx="2" fill="#323d4a" />
+    <rect x="0" y="0" width="426" height="10" rx="2" fill="#a5d8ff" />
+    <rect x="429" y="0" width="229" height="10" rx="2" fill="#79b8ff" />
+    <rect x="661" y="0" width="82" height="10" rx="2" fill="#4b82b8" />
+    <rect x="746" y="0" width="39" height="10" rx="2" fill="#34608c" />
+    <rect x="788" y="0" width="29" height="10" rx="2" fill="#7c8ea3" />
+    <rect x="820" y="0" width="27" height="10" rx="2" fill="#526375" />
+    <rect x="850" y="0" width="50" height="10" rx="2" fill="#323d4a" />
   </g>
   
     <g transform="translate(0.0, 26)">
       <rect x="0" y="3" width="8" height="8" rx="2" fill="#a5d8ff" />
       <text x="16" y="11" class="fg" font-size="12.5" font-weight="500">TypeScript</text>
-      <text x="201.0" y="11" text-anchor="end" class="muted" font-size="12">48.5%</text>
+      <text x="201.0" y="11" text-anchor="end" class="muted" font-size="12">48.3%</text>
     </g>
     <g transform="translate(233.0, 26)">
       <rect x="0" y="3" width="8" height="8" rx="2" fill="#79b8ff" />
       <text x="16" y="11" class="fg" font-size="12.5" font-weight="500">Rust</text>
-      <text x="201.0" y="11" text-anchor="end" class="muted" font-size="12">25.7%</text>
+      <text x="201.0" y="11" text-anchor="end" class="muted" font-size="12">25.9%</text>
     </g>
     <g transform="translate(466.0, 26)">
       <rect x="0" y="3" width="8" height="8" rx="2" fill="#4b82b8" />
@@ -53,7 +53,7 @@
     <g transform="translate(466.0, 52)">
       <rect x="0" y="3" width="8" height="8" rx="2" fill="#323d4a" />
       <text x="16" y="11" class="fg" font-size="12.5" font-weight="500">Other</text>
-      <text x="201.0" y="11" text-anchor="end" class="muted" font-size="12">5.7%</text>
+      <text x="201.0" y="11" text-anchor="end" class="muted" font-size="12">5.8%</text>
     </g>
   <text x="900" y="80" text-anchor="end" class="subtle" font-size="11">50 repositories (public &amp; private)</text>
 </svg>
