@@ -11,9 +11,9 @@
     }
   </style>
   <g>
-    <rect x="0" y="0" width="421" height="10" rx="2" fill="#a5d8ff" />
-    <rect x="424" y="0" width="237" height="10" rx="2" fill="#79b8ff" />
-    <rect x="664" y="0" width="81" height="10" rx="2" fill="#4b82b8" />
+    <rect x="0" y="0" width="419" height="10" rx="2" fill="#a5d8ff" />
+    <rect x="422" y="0" width="240" height="10" rx="2" fill="#79b8ff" />
+    <rect x="665" y="0" width="80" height="10" rx="2" fill="#4b82b8" />
     <rect x="748" y="0" width="38" height="10" rx="2" fill="#34608c" />
     <rect x="789" y="0" width="28" height="10" rx="2" fill="#7c8ea3" />
     <rect x="820" y="0" width="27" height="10" rx="2" fill="#526375" />
@@ -23,12 +23,12 @@
     <g transform="translate(0.0, 26)">
       <rect x="0" y="3" width="8" height="8" rx="2" fill="#a5d8ff" />
       <text x="16" y="11" class="fg" font-size="12.5" font-weight="500">TypeScript</text>
-      <text x="201.0" y="11" text-anchor="end" class="muted" font-size="12">47.7%</text>
+      <text x="201.0" y="11" text-anchor="end" class="muted" font-size="12">47.5%</text>
     </g>
     <g transform="translate(233.0, 26)">
       <rect x="0" y="3" width="8" height="8" rx="2" fill="#79b8ff" />
       <text x="16" y="11" class="fg" font-size="12.5" font-weight="500">Rust</text>
-      <text x="201.0" y="11" text-anchor="end" class="muted" font-size="12">26.8%</text>
+      <text x="201.0" y="11" text-anchor="end" class="muted" font-size="12">27.2%</text>
     </g>
     <g transform="translate(466.0, 26)">
       <rect x="0" y="3" width="8" height="8" rx="2" fill="#4b82b8" />
@@ -53,7 +53,7 @@
     <g transform="translate(466.0, 52)">
       <rect x="0" y="3" width="8" height="8" rx="2" fill="#323d4a" />
       <text x="16" y="11" class="fg" font-size="12.5" font-weight="500">Other</text>
-      <text x="201.0" y="11" text-anchor="end" class="muted" font-size="12">5.7%</text>
+      <text x="201.0" y="11" text-anchor="end" class="muted" font-size="12">5.8%</text>
     </g>
   <text x="900" y="80" text-anchor="end" class="subtle" font-size="11">50 repositories (public &amp; private)</text>
 </svg>
