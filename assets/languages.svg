@@ -11,39 +11,39 @@
     }
   </style>
   <g>
-    <rect x="0" y="0" width="417" height="10" rx="2" fill="#a5d8ff" />
-    <rect x="420" y="0" width="243" height="10" rx="2" fill="#79b8ff" />
-    <rect x="666" y="0" width="80" height="10" rx="2" fill="#4b82b8" />
-    <rect x="749" y="0" width="38" height="10" rx="2" fill="#34608c" />
-    <rect x="790" y="0" width="28" height="10" rx="2" fill="#7c8ea3" />
-    <rect x="821" y="0" width="27" height="10" rx="2" fill="#526375" />
-    <rect x="851" y="0" width="49" height="10" rx="2" fill="#323d4a" />
+    <rect x="0" y="0" width="411" height="10" rx="2" fill="#a5d8ff" />
+    <rect x="414" y="0" width="252" height="10" rx="2" fill="#79b8ff" />
+    <rect x="669" y="0" width="79" height="10" rx="2" fill="#4b82b8" />
+    <rect x="751" y="0" width="37" height="10" rx="2" fill="#34608c" />
+    <rect x="791" y="0" width="27" height="10" rx="2" fill="#7c8ea3" />
+    <rect x="821" y="0" width="26" height="10" rx="2" fill="#526375" />
+    <rect x="850" y="0" width="50" height="10" rx="2" fill="#323d4a" />
   </g>
   
     <g transform="translate(0.0, 26)">
       <rect x="0" y="3" width="8" height="8" rx="2" fill="#a5d8ff" />
       <text x="16" y="11" class="fg" font-size="12.5" font-weight="500">TypeScript</text>
-      <text x="201.0" y="11" text-anchor="end" class="muted" font-size="12">47.2%</text>
+      <text x="201.0" y="11" text-anchor="end" class="muted" font-size="12">46.5%</text>
     </g>
     <g transform="translate(233.0, 26)">
       <rect x="0" y="3" width="8" height="8" rx="2" fill="#79b8ff" />
       <text x="16" y="11" class="fg" font-size="12.5" font-weight="500">Rust</text>
-      <text x="201.0" y="11" text-anchor="end" class="muted" font-size="12">27.5%</text>
+      <text x="201.0" y="11" text-anchor="end" class="muted" font-size="12">28.6%</text>
     </g>
     <g transform="translate(466.0, 26)">
       <rect x="0" y="3" width="8" height="8" rx="2" fill="#4b82b8" />
       <text x="16" y="11" class="fg" font-size="12.5" font-weight="500">Kotlin</text>
-      <text x="201.0" y="11" text-anchor="end" class="muted" font-size="12">9.0%</text>
+      <text x="201.0" y="11" text-anchor="end" class="muted" font-size="12">8.9%</text>
     </g>
     <g transform="translate(699.0, 26)">
       <rect x="0" y="3" width="8" height="8" rx="2" fill="#34608c" />
       <text x="16" y="11" class="fg" font-size="12.5" font-weight="500">Jupyter</text>
-      <text x="201.0" y="11" text-anchor="end" class="muted" font-size="12">4.3%</text>
+      <text x="201.0" y="11" text-anchor="end" class="muted" font-size="12">4.2%</text>
     </g>
     <g transform="translate(0.0, 52)">
       <rect x="0" y="3" width="8" height="8" rx="2" fill="#7c8ea3" />
       <text x="16" y="11" class="fg" font-size="12.5" font-weight="500">Python</text>
-      <text x="201.0" y="11" text-anchor="end" class="muted" font-size="12">3.2%</text>
+      <text x="201.0" y="11" text-anchor="end" class="muted" font-size="12">3.1%</text>
     </g>
     <g transform="translate(233.0, 52)">
       <rect x="0" y="3" width="8" height="8" rx="2" fill="#526375" />
@@ -53,7 +53,7 @@
     <g transform="translate(466.0, 52)">
       <rect x="0" y="3" width="8" height="8" rx="2" fill="#323d4a" />
       <text x="16" y="11" class="fg" font-size="12.5" font-weight="500">Other</text>
-      <text x="201.0" y="11" text-anchor="end" class="muted" font-size="12">5.8%</text>
+      <text x="201.0" y="11" text-anchor="end" class="muted" font-size="12">5.7%</text>
     </g>
   <text x="900" y="80" text-anchor="end" class="subtle" font-size="11">50 repositories (public &amp; private)</text>
 </svg>
