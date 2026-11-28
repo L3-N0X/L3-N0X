@@ -11,24 +11,24 @@
     }
   </style>
   <g>
-    <rect x="0" y="0" width="397" height="10" rx="2" fill="#a5d8ff" />
-    <rect x="400" y="0" width="268" height="10" rx="2" fill="#79b8ff" />
-    <rect x="671" y="0" width="76" height="10" rx="2" fill="#4b82b8" />
-    <rect x="750" y="0" width="36" height="10" rx="2" fill="#34608c" />
-    <rect x="789" y="0" width="27" height="10" rx="2" fill="#7c8ea3" />
-    <rect x="819" y="0" width="25" height="10" rx="2" fill="#526375" />
-    <rect x="847" y="0" width="53" height="10" rx="2" fill="#323d4a" />
+    <rect x="0" y="0" width="396" height="10" rx="2" fill="#a5d8ff" />
+    <rect x="399" y="0" width="271" height="10" rx="2" fill="#79b8ff" />
+    <rect x="673" y="0" width="76" height="10" rx="2" fill="#4b82b8" />
+    <rect x="752" y="0" width="36" height="10" rx="2" fill="#34608c" />
+    <rect x="791" y="0" width="26" height="10" rx="2" fill="#7c8ea3" />
+    <rect x="820" y="0" width="25" height="10" rx="2" fill="#526375" />
+    <rect x="848" y="0" width="52" height="10" rx="2" fill="#323d4a" />
   </g>
   
     <g transform="translate(0.0, 26)">
       <rect x="0" y="3" width="8" height="8" rx="2" fill="#a5d8ff" />
       <text x="16" y="11" class="fg" font-size="12.5" font-weight="500">TypeScript</text>
-      <text x="201.0" y="11" text-anchor="end" class="muted" font-size="12">45.1%</text>
+      <text x="201.0" y="11" text-anchor="end" class="muted" font-size="12">44.9%</text>
     </g>
     <g transform="translate(233.0, 26)">
       <rect x="0" y="3" width="8" height="8" rx="2" fill="#79b8ff" />
       <text x="16" y="11" class="fg" font-size="12.5" font-weight="500">Rust</text>
-      <text x="201.0" y="11" text-anchor="end" class="muted" font-size="12">30.4%</text>
+      <text x="201.0" y="11" text-anchor="end" class="muted" font-size="12">30.7%</text>
     </g>
     <g transform="translate(466.0, 26)">
       <rect x="0" y="3" width="8" height="8" rx="2" fill="#4b82b8" />
